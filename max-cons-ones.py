@@ -13,4 +13,4 @@ def max_cons_ones(nums):
     
 nums = [2,1,1,5,6,3,1,1,1,8,1]
 print(max_cons_ones(nums))
-    
+  

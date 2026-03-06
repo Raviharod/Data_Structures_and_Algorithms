@@ -39,8 +39,9 @@ def countOccurrences(nums,target):
       high2 = mid-1
     else:
       low2 = mid+1
-   
+  if lb == -1:
+    return -1
   return ub-lb
 
 nums1 = [1,2,3,3,3,3,3,4,4,6,7,7,8]
-print(countOccurrences(nums1,3))
+print(countOccurrences(nums1,4))

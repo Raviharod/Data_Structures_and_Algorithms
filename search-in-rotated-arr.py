@@ -13,7 +13,7 @@ def searchInRotated(nums,target):
     mid = (low+high)//2
     if nums[mid] == target:
       return mid
-    if nums[mid] <= high:
+    if nums[mid] <= nums[high]:
       if nums[mid] <= target <= nums[high]:
         low = mid+1
       else:
@@ -24,5 +24,5 @@ def searchInRotated(nums,target):
       else:
         low = mid +1
   return -1
-nums = [4,5,6,7,0,1,2]
-print(searchInRotated(nums,1))
+nums = [3,4,5,6,1,2]
+print(searchInRotated(nums,2))

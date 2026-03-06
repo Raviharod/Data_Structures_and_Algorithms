@@ -6,3 +6,47 @@ Given the array nums after the rotation and an integer target, return true if ta
 
 You must decrease the overall operation steps as much as possible.'''
 
+#Brute force approach
+def searchInRotatedarr2(nums,target):
+  for num in nums:
+    if num == target:
+      return True
+  return False
+
+nums1 = [10,11,11,12,12,13,13,13,1,2,3,4]
+print(searchInRotatedarr2(nums1,13))
+
+#Optimal Solution
+def searchInRotated(nums,target):
+  n = len(nums)
+  low = 0  
+  high = n-1
+  while low<=high:
+    mid = (low+high)//2
+    if nums[mid] == target:
+      return True
+    if nums[low] == nums[mid] == nums[high]:
+      low += 1
+      high -= 1
+      continue
+    if nums[mid] <= nums[high]:
+      if nums[mid] <= target <= nums[high]:
+        low = mid+1
+        while low<=high and nums[low] == nums[low-1]:
+          low += 1 
+      else:
+        high = mid-1
+        while low<=high and nums[high] == nums[high+1]:
+          high -= 1
+    else:
+      if nums[low] <= target <= nums[mid]:
+        high = mid-1
+        while low<=high and nums[high] == nums[high+1]:
+          high -= 1
+      else:
+        low = mid +1
+        while low<=high and nums[low] == nums[low-1]:
+          low += 1 
+  return False
+nums = [7,7,7,7,7,7,7,1,2,3,4,5,7,7]
+print(searchInRotated(nums,5))

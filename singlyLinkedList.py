@@ -8,7 +8,7 @@ class SinglyLinkedList:
   def __init__(self):
     self.head = None
 
-  def append(self,value):
+  def append(self,value,pos=None):
     newNode = Node(value)
     if self.head == None:
       self.head = newNode
@@ -16,6 +16,7 @@ class SinglyLinkedList:
       curr = self.head
       while curr.next is not None:
         curr = curr.next
+      
       curr.next = newNode
   
   def traverse(self):

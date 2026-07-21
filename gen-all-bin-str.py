@@ -39,7 +39,7 @@ class Solution:
     return result
   
 binStr = Solution()
-res = binStr.generateBinStrings(3)
-print(res)
+result = binStr.generateBinStrings(4)
+print(result)
 
 
